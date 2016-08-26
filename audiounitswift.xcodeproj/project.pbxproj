@@ -15,6 +15,11 @@
 		A219ABCA1C0C6B8900687F15 /* MyAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A219ABC91C0C6B8900687F15 /* MyAudioPlayer.swift */; };
 		A219ABCE1C0C74F400687F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A219ABCD1C0C74F400687F15 /* Foundation.framework */; };
 		A219ABCF1C0C74FD00687F15 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A219ABCB1C0C6F2E00687F15 /* CoreAudio.framework */; };
+		A2CB491C1D7076C000DA9B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB491B1D7076C000DA9B2A /* AppDelegate.swift */; };
+		A2CB491E1D7076C000DA9B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CB491D1D7076C000DA9B2A /* ViewController.swift */; };
+		A2CB49201D7076C000DA9B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB491F1D7076C000DA9B2A /* Assets.xcassets */; };
+		A2CB49231D7076C000DA9B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CB49211D7076C000DA9B2A /* Main.storyboard */; };
+		A2CB49281D70775F00DA9B2A /* MyAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A219ABC91C0C6B8900687F15 /* MyAudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,12 @@
 		A219ABC91C0C6B8900687F15 /* MyAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAudioPlayer.swift; sourceTree = "<group>"; };
 		A219ABCB1C0C6F2E00687F15 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		A219ABCD1C0C74F400687F15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A2CB49191D7076C000DA9B2A /* audiounitswiftOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = audiounitswiftOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CB491B1D7076C000DA9B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A2CB491D1D7076C000DA9B2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2CB491F1D7076C000DA9B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2CB49221D7076C000DA9B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2CB49241D7076C000DA9B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +51,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2CB49161D7076C000DA9B2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -47,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				A219ABB61C0C6B7400687F15 /* audiounitswift */,
+				A2CB491A1D7076C000DA9B2A /* audiounitswiftOSX */,
 				A219ABB51C0C6B7400687F15 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				A219ABB41C0C6B7400687F15 /* audiounitswift.app */,
+				A2CB49191D7076C000DA9B2A /* audiounitswiftOSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +93,18 @@
 				A219ABCB1C0C6F2E00687F15 /* CoreAudio.framework */,
 			);
 			path = audiounitswift;
+			sourceTree = "<group>";
+		};
+		A2CB491A1D7076C000DA9B2A /* audiounitswiftOSX */ = {
+			isa = PBXGroup;
+			children = (
+				A2CB491B1D7076C000DA9B2A /* AppDelegate.swift */,
+				A2CB491D1D7076C000DA9B2A /* ViewController.swift */,
+				A2CB491F1D7076C000DA9B2A /* Assets.xcassets */,
+				A2CB49211D7076C000DA9B2A /* Main.storyboard */,
+				A2CB49241D7076C000DA9B2A /* Info.plist */,
+			);
+			path = audiounitswiftOSX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,18 +127,38 @@
 			productReference = A219ABB41C0C6B7400687F15 /* audiounitswift.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A2CB49181D7076C000DA9B2A /* audiounitswiftOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2CB49271D7076C000DA9B2A /* Build configuration list for PBXNativeTarget "audiounitswiftOSX" */;
+			buildPhases = (
+				A2CB49151D7076C000DA9B2A /* Sources */,
+				A2CB49161D7076C000DA9B2A /* Frameworks */,
+				A2CB49171D7076C000DA9B2A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = audiounitswiftOSX;
+			productName = audiounitswiftOSX;
+			productReference = A2CB49191D7076C000DA9B2A /* audiounitswiftOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A219ABAC1C0C6B7400687F15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = pebble8888;
 				TargetAttributes = {
 					A219ABB31C0C6B7400687F15 = {
 						CreatedOnToolsVersion = 7.1.1;
+					};
+					A2CB49181D7076C000DA9B2A = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -124,6 +176,7 @@
 			projectRoot = "";
 			targets = (
 				A219ABB31C0C6B7400687F15 /* audiounitswift */,
+				A2CB49181D7076C000DA9B2A /* audiounitswiftOSX */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +192,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2CB49171D7076C000DA9B2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2CB49201D7076C000DA9B2A /* Assets.xcassets in Resources */,
+				A2CB49231D7076C000DA9B2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -149,6 +211,16 @@
 				A219ABCA1C0C6B8900687F15 /* MyAudioPlayer.swift in Sources */,
 				A219ABBA1C0C6B7400687F15 /* ViewController.swift in Sources */,
 				A219ABB81C0C6B7400687F15 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CB49151D7076C000DA9B2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2CB49281D70775F00DA9B2A /* MyAudioPlayer.swift in Sources */,
+				A2CB491E1D7076C000DA9B2A /* ViewController.swift in Sources */,
+				A2CB491C1D7076C000DA9B2A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +241,14 @@
 				A219ABC11C0C6B7400687F15 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A2CB49211D7076C000DA9B2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2CB49221D7076C000DA9B2A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -289,6 +369,39 @@
 			};
 			name = Release;
 		};
+		A2CB49251D7076C000DA9B2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = audiounitswiftOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = pebble8888.audiounitswiftOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A2CB49261D7076C000DA9B2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = audiounitswiftOSX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = pebble8888.audiounitswiftOSX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -309,6 +422,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A2CB49271D7076C000DA9B2A /* Build configuration list for PBXNativeTarget "audiounitswiftOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2CB49251D7076C000DA9B2A /* Debug */,
+				A2CB49261D7076C000DA9B2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

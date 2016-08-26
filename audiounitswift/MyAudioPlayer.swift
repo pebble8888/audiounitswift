@@ -17,7 +17,7 @@ class MyAudioPlayer
     var _x: Float = 0
     let _sampleRate:Double = 44100
     init() {
-        var acd = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType: kAudioUnitSubType_RemoteIO, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
+        var acd = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType: kAudioUnitSubType_HALOutput, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
         let ac = AudioComponentFindNext(nil, &acd)
         AudioComponentInstanceNew(ac, &_audiounit)
         AudioUnitInitialize(_audiounit);
