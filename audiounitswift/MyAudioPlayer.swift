@@ -13,11 +13,18 @@ import AVFoundation
 
 class MyAudioPlayer
 {
-    var _audiounit: AudioUnit = AudioUnit()
+    var _audiounit: AudioUnit = nil
     var _x: Float = 0
     let _sampleRate:Double = 44100
+    var _done:Bool = false
     init() {
-        var acd = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType: kAudioUnitSubType_HALOutput, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
+#if os(iOS)
+        let subtype = kAudioUnitSubType_RemoteIO
+#else
+        let subtype = kAudioUnitSubType_HALOutput 
+#endif
+        var acd = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType:subtype, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
+        
         let ac = AudioComponentFindNext(nil, &acd)
         AudioComponentInstanceNew(ac, &_audiounit)
         AudioUnitInitialize(_audiounit);
@@ -33,13 +40,17 @@ class MyAudioPlayer
         return noErr
     }
     func render(inNumberFrames: UInt32, ioData: UnsafeMutablePointer<AudioBufferList>) {
+        if !_done {
+            getThreadPolicy()
+            _done = true
+        }
         let delta:Float = Float(440 * 2 * M_PI / _sampleRate)
         let abl = UnsafeMutableAudioBufferListPointer(ioData)
         var x:Float = 0
         for buffer:AudioBuffer in abl {
             x = _x
             let buf:UnsafeMutablePointer<Float> = unsafeBitCast(buffer.mData, UnsafeMutablePointer<Float>.self)
-            for var i:Int = 0; i < Int(inNumberFrames); ++i {
+            for i:Int in 0 ..< Int(inNumberFrames) {
                 buf[i] = sin(x)
                 x += delta
             }
