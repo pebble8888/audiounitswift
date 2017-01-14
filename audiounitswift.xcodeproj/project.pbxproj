@@ -156,6 +156,7 @@
 				TargetAttributes = {
 					A219ABB31C0C6B7400687F15 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0820;
 					};
 					A2CB49181D7076C000DA9B2A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -350,6 +351,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = pebble.audiounitswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -365,6 +367,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = pebble.audiounitswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
@@ -383,6 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pebble8888.audiounitswiftOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -399,6 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pebble8888.audiounitswiftOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -430,6 +435,7 @@
 				A2CB49261D7076C000DA9B2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
