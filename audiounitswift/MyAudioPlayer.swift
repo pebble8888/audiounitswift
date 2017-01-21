@@ -27,6 +27,7 @@ class MyAudioPlayer
         let ac = AudioComponentFindNext(nil, &acd)
         AudioComponentInstanceNew(ac!, &_audiounit)
         AudioUnitInitialize(_audiounit!);
+        // オーディオデータ供給を44100,ステレオ,標準フォーマット(Float32, Non-Interleave)に設定
         let audioformat:AVAudioFormat = AVAudioFormat(standardFormatWithSampleRate: _sampleRate, channels: 2)
         var asbd:AudioStreamBasicDescription = audioformat.streamDescription.pointee
         AudioUnitSetProperty(_audiounit!, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &asbd, UInt32(MemoryLayout.size(ofValue: asbd)))
@@ -39,6 +40,7 @@ class MyAudioPlayer
         inNumberFrames: UInt32, 
         ioData: UnsafeMutablePointer<AudioBufferList>?)
         in
+        // ポインタからMyAudioPlayerインスタンスに変換
         let myAudioPlayer:MyAudioPlayer = unsafeBitCast(inRefCon, to: MyAudioPlayer.self)
         myAudioPlayer.render(inNumberFrames, ioData:ioData)
         return noErr
@@ -65,6 +67,7 @@ class MyAudioPlayer
         }
     }
     func play() {
+        // MyAudioPlayerインスタンスをポインタに変換
         let ref: UnsafeMutableRawPointer = unsafeBitCast(self, to: UnsafeMutableRawPointer.self)
         var callbackstruct:AURenderCallbackStruct = AURenderCallbackStruct(inputProc: callback, inputProcRefCon: ref)
         AudioUnitSetProperty(_audiounit!, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &callbackstruct, UInt32(MemoryLayout.size(ofValue: callbackstruct)))
