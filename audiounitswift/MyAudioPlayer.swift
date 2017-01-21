@@ -51,10 +51,13 @@ class MyAudioPlayer
         var x:Float = 0
         for buffer:AudioBuffer in abl {
             x = _x
-            let buf:UnsafeMutablePointer<Float> = unsafeBitCast(buffer.mData, to: UnsafeMutablePointer<Float>.self)
-            for i:Int in 0 ..< Int(inNumberFrames) {
-                buf[i] = sin(x)
-                x += delta
+            let cap = Int(buffer.mDataByteSize)/MemoryLayout<Float>.size
+            assert(cap == Int(inNumberFrames))
+            if let buf:UnsafeMutablePointer<Float> = buffer.mData?.bindMemory(to: Float.self, capacity: cap) {
+                for i:Int in 0 ..< Int(inNumberFrames) {
+                    buf[i] = sin(x)
+                    x += delta
+                }
             }
         }
         if abl.count > 0 {
