@@ -16,7 +16,6 @@ class MyAudioPlayer
     var _audiounit: AudioUnit? = nil
     var _x: Float = 0
     let _sampleRate:Double = 44100
-    var _done:Bool = false
     init() {
 #if os(iOS)
         let subtype = kAudioUnitSubType_RemoteIO
@@ -45,10 +44,6 @@ class MyAudioPlayer
         return noErr
     }
     func render(_ inNumberFrames: UInt32, ioData: UnsafeMutablePointer<AudioBufferList>?) {
-        if !_done {
-            // getThreadPolicy()
-            _done = true
-        }
         let delta:Float = Float(440 * 2 * M_PI / _sampleRate)
         guard let abl = UnsafeMutableAudioBufferListPointer(ioData) else {
             return
