@@ -22,7 +22,11 @@ class MyAudioPlayer
 #else
         let subtype = kAudioUnitSubType_HALOutput 
 #endif
-        var acd = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType:subtype, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
+        var acd = AudioComponentDescription(componentType: kAudioUnitType_Output, 
+                                            componentSubType:subtype, 
+                                            componentManufacturer: kAudioUnitManufacturer_Apple,
+                                            componentFlags: 0, 
+                                            componentFlagsMask: 0)
         
         let ac = AudioComponentFindNext(nil, &acd)
         AudioComponentInstanceNew(ac!, &_audiounit)
@@ -41,7 +45,7 @@ class MyAudioPlayer
         ioData: UnsafeMutablePointer<AudioBufferList>?)
         in
         // ポインタからMyAudioPlayerインスタンスに変換
-        let myAudioPlayer:MyAudioPlayer = unsafeBitCast(inRefCon, to: MyAudioPlayer.self)
+        let myAudioPlayer:MyAudioPlayer = Unmanaged<MyAudioPlayer>.fromOpaque(inRefCon).takeUnretainedValue()
         myAudioPlayer.render(inNumberFrames, ioData:ioData)
         return noErr
     }
@@ -68,7 +72,7 @@ class MyAudioPlayer
     }
     func play() {
         // MyAudioPlayerインスタンスをポインタに変換
-        let ref: UnsafeMutableRawPointer = unsafeBitCast(self, to: UnsafeMutableRawPointer.self)
+        let ref: UnsafeMutableRawPointer = UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque())
         var callbackstruct:AURenderCallbackStruct = AURenderCallbackStruct(inputProc: callback, inputProcRefCon: ref)
         AudioUnitSetProperty(_audiounit!, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &callbackstruct, UInt32(MemoryLayout.size(ofValue: callbackstruct)))
         
