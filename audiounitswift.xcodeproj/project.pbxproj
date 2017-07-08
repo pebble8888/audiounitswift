@@ -20,6 +20,7 @@
 		A2CB49201D7076C000DA9B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CB491F1D7076C000DA9B2A /* Assets.xcassets */; };
 		A2CB49231D7076C000DA9B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CB49211D7076C000DA9B2A /* Main.storyboard */; };
 		A2CB49281D70775F00DA9B2A /* MyAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A219ABC91C0C6B8900687F15 /* MyAudioPlayer.swift */; };
+		A2DD4E731E951E7A00A8DFD3 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DD4E721E951E7A00A8DFD3 /* WaveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		A2CB491F1D7076C000DA9B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2CB49221D7076C000DA9B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2CB49241D7076C000DA9B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2DD4E721E951E7A00A8DFD3 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				A219ABB71C0C6B7400687F15 /* AppDelegate.swift */,
 				A219ABB91C0C6B7400687F15 /* ViewController.swift */,
 				A219ABC91C0C6B8900687F15 /* MyAudioPlayer.swift */,
+				A2DD4E721E951E7A00A8DFD3 /* WaveView.swift */,
 				A219ABBB1C0C6B7400687F15 /* Main.storyboard */,
 				A219ABBE1C0C6B7400687F15 /* Assets.xcassets */,
 				A219ABC01C0C6B7400687F15 /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 				TargetAttributes = {
 					A219ABB31C0C6B7400687F15 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = WAXDS76BRK;
 						LastSwiftMigration = 0820;
 					};
 					A2CB49181D7076C000DA9B2A = {
@@ -212,6 +216,7 @@
 				A219ABCA1C0C6B8900687F15 /* MyAudioPlayer.swift in Sources */,
 				A219ABBA1C0C6B7400687F15 /* ViewController.swift in Sources */,
 				A219ABB81C0C6B7400687F15 /* AppDelegate.swift in Sources */,
+				A2DD4E731E951E7A00A8DFD3 /* WaveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = WAXDS76BRK;
 				INFOPLIST_FILE = audiounitswift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -361,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = WAXDS76BRK;
 				INFOPLIST_FILE = audiounitswift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

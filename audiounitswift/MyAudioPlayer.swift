@@ -13,6 +13,7 @@ import AVFoundation
 
 class MyAudioPlayer
 {
+    var _samples:[Float] = [Float](repeating: 0.0, count:64)
     var _audiounit: AudioUnit? = nil
     var _x: Float = 0
     let _sampleRate:Double = 44100
@@ -50,7 +51,8 @@ class MyAudioPlayer
         return noErr
     }
     func render(_ inNumberFrames: UInt32, ioData: UnsafeMutablePointer<AudioBufferList>?) {
-        let delta:Float = Float(440 * 2 * M_PI / _sampleRate)
+        print("inNumberFrames \(inNumberFrames)")
+        let delta:Float = Float(440 * 2 * Double.pi / _sampleRate)
         guard let abl = UnsafeMutableAudioBufferListPointer(ioData) else {
             return
         }
@@ -63,6 +65,9 @@ class MyAudioPlayer
                 for i:Int in 0 ..< Int(inNumberFrames) {
                     buf[i] = sin(x)
                     x += delta
+                    if i < 64 {
+                        _samples[i] = buf[i]
+                    }
                 }
             }
         }
