@@ -51,7 +51,7 @@ class MyAudioPlayer
         return noErr
     }
     func render(_ inNumberFrames: UInt32, ioData: UnsafeMutablePointer<AudioBufferList>?) {
-        print("inNumberFrames \(inNumberFrames)")
+        //print("inNumberFrames \(inNumberFrames)")
         let delta:Float = Float(440 * 2 * Double.pi / _sampleRate)
         guard let abl = UnsafeMutableAudioBufferListPointer(ioData) else {
             return

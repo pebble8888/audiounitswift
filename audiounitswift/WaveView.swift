@@ -11,6 +11,7 @@ import UIKit
 class WaveView: UIView {
 
     override func draw(_ rect: CGRect) {
+        /*
         if let cx:CGContext = UIGraphicsGetCurrentContext() {
             cx.setFillColor(red: 0.0, green: 1.0, blue: 1.0, alpha: 1.0)
             cx.setStrokeColor(red:1.0, green:0.0, blue:1.0, alpha:1.0)
@@ -24,6 +25,7 @@ class WaveView: UIView {
             cx.addLine(to:CGPoint(x:150, y:200))
             cx.strokePath()
         }
+         */
     }
 
 }
